@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina initial-scale</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPLIFF das ruas pra net</title>
+  <link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
-    <header>
-        <h1 style="font-family: 'Times New Roman', Times, serif">Spliff</h1>
-    </header>
+  <header>
+    <img class="logo img" src="src/imgs/logoSpliff.jpeg" alt="Logo Spliff" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#colecao">Coleção</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Modernidade maxima nas peita.</h2>
+    <p>Roupas direto das ruas do guetto pro seu rolê.</p>
+    <a href="#colecao" class="btn">Ver Coleção</a>
+  </section>
+
+  <section id="colecao" class="produtos">
+    <h2>Últimos Drops</h2>
+    <div class="grid">
+      <div class="produto-card">
+        <img src="assets/images/camisa1.jpg" alt="Camisa Oversized" />
+        <h3>Camisa Oversized</h3>
+        <p>R$129,90</p>
+      </div>
+      <div class="produto-card">
+        <img src="assets/images/moletom1.jpg" alt="Moletom Spliff" />
+        <h3>Moletom Spliff</h3>
+        <p>R$189,90</p>
+      </div>
+      <!-- Adiciona mais produtos aqui -->
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>Sobre a Spliff</h2>
+    <p>Mais do que a roupa, a Spliff e familia e união. Nascida nas ruas da alma do skate.</p>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Fala com a gente</h2>
+    <p>Email: contato@spliff.com.br</p>
+    <p>Instagram: @spliffstreet</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Spliff Streetwear. Copia não comedia.</p>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>
