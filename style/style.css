@@ -1,10 +1,15 @@
+/**
+ * SPLIFF Streetwear - Estilos principais
+ * Design minimalista em preto e branco
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Inter:wght@400;700&display=swap');
 
 :root {
-  --cor-principal: #0f0; /* Verde neon estilo erva */
+  --cor-principal: #fff;
   --cor-fundo: #000;
   --cor-texto: #fff;
-  --cor-destaque: #1db954;
+  --cor-destaque: #fff;
   --fonte-logo: 'Rubik Mono One', sans-serif;
   --fonte-padrao: 'Inter', sans-serif;
 }
@@ -16,128 +21,409 @@
 }
 
 body {
-  font-family: var(--fonte-padrao);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-header {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
   background-color: #111;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-
 
 .logo {
-  width: 27vh;
-  height: 15vh;
+  font-family: 'Rubik Mono One', monospace;
+  font-size: 2rem;
+  color: #fff;
 }
 
-nav ul {
+/* Botão do menu */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.menu-btn-line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #111;
+  z-index: 200;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.5rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-header h2 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-menu {
   list-style: none;
-  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
-nav a {
-  color: var(--cor-texto);
+.sidebar-menu li {
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--cor-destaque);
+.sidebar-link:hover {
+  background-color: #222;
 }
 
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 150;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #222;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  color: #fff;
+}
+
+/* Hero Section */
 .hero {
+  padding: 120px 20px 80px;
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #000, #111);
+  background: linear-gradient(135deg, #000 0%, #111 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  color: var(--cor-principal);
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-.hero p {
+.hero-content p {
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
+  color: #ccc;
 }
 
-.btn {
+.cta-btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  background-color: var(--cor-destaque);
+  padding: 1rem 2rem;
+  background-color: #fff;
   color: #000;
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0f0;
+.cta-btn:hover {
+  background-color: #ccc;
+  transform: translateY(-2px);
 }
 
-.produtos {
-  padding: 3rem 2rem;
+/* Collection */
+.collection {
+  padding: 80px 0;
+  background-color: #000;
+}
+
+.collection h2 {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #fff;
 }
 
-.produtos h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--cor-principal);
-}
-
-.grid {
+.products-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.produto-card {
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-card {
   background-color: #111;
-  padding: 1rem;
-  border: 1px solid #333;
   border-radius: 8px;
-  transition: transform 0.2s;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
 }
 
-.produto-card:hover {
-  transform: scale(1.03);
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
-.produto-card img {
+.product-card img {
   width: 100%;
-  border-radius: 4px;
+  height: auto;
+  max-height: 35vh;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
-.sobre,
-.contato {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.sobre h2,
-.contato h2 {
-  color: var(--cor-principal);
-  font-size: 2rem;
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
-footer {
+.add-to-cart {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #ccc;
+}
+
+/* About */
+.about {
+  padding: 80px 0;
   background-color: #111;
-  color: #777;
-  padding: 1rem;
   text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.about p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ccc;
+}
+
+/* Contact */
+.contact {
+  padding: 80px 0;
+  background-color: #000;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.footer p {
+  color: #777;
   font-size: 0.9rem;
-  border-top: 1px solid #222;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .collection h2,
+  .about h2,
+  .contact h2 {
+    font-size: 2rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
 }

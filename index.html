@@ -1,59 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPLIFF das ruas pra net</title>
-  <link rel="stylesheet" href="style/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPLIFF - Das ruas pra net</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-  <header>
-    <img class="logo img" src="src/imgs/logoSpliff.jpeg" alt="Logo Spliff" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="#colecao">Coleção</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo">SPLIFF</h1>
+      
+      <!-- Botão do menu -->
+      <button class="menu-btn" id="menuBtn">
+        <span class="menu-btn-line"></span>
+        <span class="menu-btn-line"></span>
+        <span class="menu-btn-line"></span>
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Modernidade maxima nas peita.</h2>
-    <p>Roupas direto das ruas do guetto pro seu rolê.</p>
-    <a href="#colecao" class="btn">Ver Coleção</a>
-  </section>
+  <!-- Menu lateral -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Menu</h2>
+      <button class="close-btn" id="closeBtn">&times;</button>
+    </div>
+    
+    <ul class="sidebar-menu">
+      <li><a href="#colecao" class="sidebar-link">Coleção</a></li>
+      <li><a href="#sobre" class="sidebar-link">Sobre</a></li>
+      <li><a href="#contato" class="sidebar-link">Contato</a></li>
+      <li><a href="#" class="sidebar-link" id="cartBtn">Carrinho 🛒 <span id="cartCount">0</span></a></li>
+    </ul>
+  </nav>
 
-  <section id="colecao" class="produtos">
-    <h2>Últimos Drops</h2>
-    <div class="grid">
-      <div class="produto-card">
-        <img src="assets/images/camisa1.jpg" alt="Camisa Oversized" />
-        <h3>Camisa Oversized</h3>
-        <p>R$129,90</p>
+  <!-- Overlay do menu -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Modal do carrinho -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Seu Carrinho</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
       </div>
-      <div class="produto-card">
-        <img src="assets/images/moletom1.jpg" alt="Moletom Spliff" />
-        <h3>Moletom Spliff</h3>
-        <p>R$189,90</p>
+      <div class="modal-body">
+        <p>O carrinho está vazio.</p>
       </div>
-      <!-- Adiciona mais produtos aqui -->
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Modernidade máxima nas peita</h2>
+      <p>Roupas direto das ruas do guetto pro seu rolê</p>
+      <a href="#colecao" class="cta-btn">Ver Coleção</a>
     </div>
   </section>
 
-  <section id="sobre" class="sobre">
-    <h2>Sobre a Spliff</h2>
-    <p>Mais do que a roupa, a Spliff e familia e união. Nascida nas ruas da alma do skate.</p>
+  <!-- Coleção -->
+  <section id="colecao" class="collection">
+    <div class="container">
+      <h2>Últimos Drops</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="assets/images/camisa1.jpg" alt="Camisa Oversized">
+          <div class="product-info">
+            <h3>Camisa Oversized</h3>
+            <p class="price">R$ 129,90</p>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <img src="assets/images/moletom1.jpg" alt="Moletom Spliff">
+          <div class="product-info">
+            <h3>Moletom Spliff</h3>
+            <p class="price">R$ 189,90</p>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contato" class="contato">
-    <h2>Fala com a gente</h2>
-    <p>Email: contato@spliff.com.br</p>
-    <p>Instagram: @spliffstreet</p>
+  <!-- Sobre -->
+  <section id="sobre" class="about">
+    <div class="container">
+      <h2>Sobre a Spliff</h2>
+      <p>Mais do que roupa, a Spliff é família e união. Nascida nas ruas da alma do skate.</p>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Spliff Streetwear. Copia não comedia.</p>
+  <!-- Contato -->
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2>Fala com a gente</h2>
+      <div class="contact-info">
+        <p>Email: contato@spliff.com.br</p>
+        <p>Instagram: @spliffstreet</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Spliff Streetwear. Copia não comedia.</p>
+    </div>
   </footer>
 
   <script src="scripts/scripts.js"></script>
